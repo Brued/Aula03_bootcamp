@@ -33,7 +33,38 @@
 # log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 
-log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
+# log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
 
-if log['level'] =='ERROR':
-    print(log['message'])
+# if log['level'] =='ERROR':
+#     print(log['message'])
+
+# Exercício 4: Validação de Dados de Entrada
+# Antes de processar os dados de usuários em um sistema de recomendação,
+# você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha fornecido um email válido. 
+# Escreva um programa que valide essas condições e imprima "Dados de usuário válidos" ou o erro específico encontrado.
+
+import re
+
+regra = r"^[A-Z0-9\._+ '\"-]+\@[A-Z0-9]+\.[A-Z0-9]+"
+idade = float(input("Digite sua idade: "))
+email= input("Digite seu email: ").upper()
+
+if not 18 <= idade <= 65:
+    print("Idade fora do intervalo.")
+elif not re.search (regra, email):
+    print ("Email inválido.")
+else:
+    print("Dados de usuário válidos.")
+
+
+# MANEIRA LUCIANO
+
+# idade = 25  # Exemplo de valor, substitua com input do usuário se necessário
+# email = "usuario@exemplo.com"  # Exemplo de valor, substitua com input do usuário se necessário
+
+# if not 18 <= idade <= 65:
+#     print("Idade fora do intervalo permitido")
+# elif "@" not in email or "." not in email:
+#     print("Email inválido")
+# else:
+#     print("Dados de usuário válidos")
