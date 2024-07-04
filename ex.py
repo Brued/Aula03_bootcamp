@@ -43,18 +43,18 @@
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha fornecido um email válido. 
 # Escreva um programa que valide essas condições e imprima "Dados de usuário válidos" ou o erro específico encontrado.
 
-import re
+# import re
 
-regra = r"^[A-Z0-9\._+ '\"-]+\@[A-Z0-9]+\.[A-Z0-9]+"
-idade = float(input("Digite sua idade: "))
-email= input("Digite seu email: ").upper()
+# regra = r"^[A-Z0-9\._+ '\"-]+\@[A-Z0-9]+\.[A-Z0-9]+"
+# idade = float(input("Digite sua idade: "))
+# email= input("Digite seu email: ").upper()
 
-if not 18 <= idade <= 65:
-    print("Idade fora do intervalo.")
-elif not re.search (regra, email):
-    print ("Email inválido.")
-else:
-    print("Dados de usuário válidos.")
+# if not 18 <= idade <= 65:
+#     print("Idade fora do intervalo.")
+# elif not re.search (regra, email):
+#     print ("Email inválido.")
+# else:
+#     print("Dados de usuário válidos.")
 
 
 # MANEIRA LUCIANO
@@ -68,3 +68,27 @@ else:
 #     print("Email inválido")
 # else:
 #     print("Dados de usuário válidos")
+
+#  Exercício 5: Detecção de Anomalias em Dados de Transações
+# Você está trabalhando em um sistema de detecção de fraude e precisa identificar transações suspeitas. 
+# Uma transação é considerada suspeita se o valor for superior a R$ 10.000 ou se ocorrer fora do horário 
+# comercial (antes das 9h ou depois das 18h). Dada uma transação como transacao = {'valor': 12000, 'hora': 20}, 
+# verifique se ela é suspeita.
+
+transacao = {'valor': 12000, 'hora': 20}
+
+# valor for superior a R$ 10.000
+# if transacao['valor'] > 10000:
+#     print(" Limite de transação.")
+# elif 9 <= transacao['hora'] <= 18:
+#     print("Horario não permitido")
+
+
+# fora do horário  comercial (antes das 9h ou depois das 18h)
+
+transacao = {'valor': 12000, 'hora': 20}
+
+if transacao['valor'] > 10000 or transacao['hora'] < 9 or transacao['hora'] > 18:
+    print("Transação suspeita")
+else:
+    print("Transação normal")
